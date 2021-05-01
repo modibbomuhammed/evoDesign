@@ -13,7 +13,7 @@ const Details = styled.div`
 `;
 
 export const SummaryDetails = (props: { activity: Activity }): JSX.Element => {
-  const activities = Object.entries(props.activity);
+  const activities = (props.activity && Object.entries(props.activity)) || [];
   const summary = activities.map(([type, value], index) => (
     <SummaryBox key={index} value={value} type={type.toUpperCase()} />
   ));

@@ -35,11 +35,14 @@ interface Props {
 }
 
 export const GenderDetails = (props: Props) => {
-  const age = moment().diff(props.birthdate, "years");
+  const age =
+    (props.birthdate && moment().diff(props.birthdate, "years")) || "";
+  const gender = props.gender || "";
+
   return (
     <>
       <Itag className="fal fa-user"></Itag>
-      <Text>{`${props.gender.toUpperCase()} - ${age}`}</Text>
+      {props.birthdate && <Text>{`${gender.toUpperCase()} - ${age}`}</Text>}
     </>
   );
 };

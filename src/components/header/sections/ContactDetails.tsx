@@ -42,7 +42,7 @@ export const ContactDetails = (props: props): JSX.Element => {
         <ContactType>
           <i className="fal fa-user user-pic"></i>
         </ContactType>
-        <ContactValue>{props.id}</ContactValue>
+        {props.id && <ContactValue>#{props.id}</ContactValue>}
       </div>
       <div>
         <ContactType>
