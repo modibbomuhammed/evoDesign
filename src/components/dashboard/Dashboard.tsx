@@ -1,6 +1,6 @@
 import React from "react";
 
-import Buttons from "./Buttons";
+import Buttons from "../../containers/Buttons";
 import { Section, Container, StatusMessage } from "./DashboardStyles";
 
 export const Dashboard = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchOrderInfo, setButton } from "../../store/actions/index";
+import { fetchOrderInfo, setButton } from "../store/actions/index";
 import { connect } from "react-redux";
 
 import {
@@ -7,7 +7,7 @@ import {
   ActiveText,
   DisabledButton,
   DisabledText,
-} from "./DashboardStyles";
+} from "../components/dashboard/DashboardStyles";
 
 interface props {
   fetchOrderInfo: () => void;

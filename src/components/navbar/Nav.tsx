@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { Modal } from "../Modal/Modal";
+import  Spinner, { StyledLogo } from '../Modal/Spinner';
 import NewOrderButton from "./NewOrderButton";
 import { NavBar, SpanStar, NavName } from "./Styles";
 
 export const Nav: React.FC = (): JSX.Element => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <NavBar>
       <>
@@ -11,7 +14,11 @@ export const Nav: React.FC = (): JSX.Element => {
         </SpanStar>
         <NavName>Joseph Smith</NavName>
       </>
-      <NewOrderButton />
+      <NewOrderButton openModal={() => setIsOpen(true)} />
+
+      <Modal open={isOpen} closeModal={() => setIsOpen(false)}>
+        <Spinner />
+      </Modal>
     </NavBar>
   );
 };

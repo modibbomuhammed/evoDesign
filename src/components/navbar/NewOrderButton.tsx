@@ -1,10 +1,14 @@
 import React from "react";
 import { NewOrderWrapper, NewOrder } from "./Styles";
 
-const NewOrderButton: React.FC = (): JSX.Element => {
+interface props {
+  openModal: () => void;
+}
+
+const NewOrderButton: React.FC<props> = ({ openModal }): JSX.Element => {
   return (
     <NewOrderWrapper>
-      <NewOrder>New Order</NewOrder>
+      <NewOrder onClick={() => openModal()}>New Order</NewOrder>
     </NewOrderWrapper>
   );
 };

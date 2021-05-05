@@ -1,21 +1,18 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
-import { GenderDetails } from "./sections/GenderDetails";
-import { ContactDetails } from "./sections/ContactDetails";
-import { CarrierDetails } from "./sections/CarrierDetails";
-import { CommunicationDetails } from "./sections/communication/CommunicationDetails";
-import { User } from "../../store/types/stateTypes";
-import { fetchUserInfo } from "../../store/actions";
+import { GenderDetails, CarrierDetails, ContactDetails, CommunicationDetails} from '../components/header/sections';
+import { User } from "../store/types/stateTypes";
+import { fetchUserInfo } from "../store/actions";
 
-import { Gender, Communication, Carrier } from "./sections/styles/HeaderStyles";
+import { Gender, Communication, Carrier } from "../components/header/sections/styles/HeaderStyles";
 
 const Header = (props: { load: () => void; userInfo: User }): JSX.Element => {
-  useEffect(() => {
-    if (!Object.keys(props.userInfo).length) props.load();
-  }, []);
-
   const { userInfo } = props;
+
+  useEffect(() => {
+    if (!Object.keys(userInfo).length) props.load();
+  }, [userInfo]);
 
   return (
     <header style={{ display: "flex" }}>

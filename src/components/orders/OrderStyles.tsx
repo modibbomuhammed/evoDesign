@@ -31,6 +31,7 @@ height: 40px;
 background: ${(props) => (props.active ? "#3A3A3A;" : "#d2d2d2;")}
 padding: 0 20px;
 margin-left: 2px;
+cursor: pointer;
 
 white-space: nowrap;
 font: normal normal bold 12px/14px Arial;

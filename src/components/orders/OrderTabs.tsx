@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { TabsWrapper, Tab } from "./OrderStyles";
 
-export const OrderTabs = (props: { tabs: string[] }) => {
-  const [tabs, setTabs] = useState(props.tabs);
-  const [activeTab, setActiveTab] = useState(tabs[2]);
+export const OrderTabs = (props: {
+  tabs: string[];
+  active: string;
+  handleChange: (name: string) => void;
+}) => {
+  const { tabs, active } = props;
+
   const handleTabClick = (e: any) => {
-    setActiveTab(e.target?.id);
+    props.handleChange(e.target?.id);
   };
+
   return (
     <TabsWrapper>
       {tabs.map((name, index) => (
         <Tab
           key={index}
-          active={name === activeTab}
+          active={name === active}
           id={name}
           onClick={handleTabClick}
         >
