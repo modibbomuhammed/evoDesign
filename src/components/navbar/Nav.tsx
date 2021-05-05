@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal } from "../Modal/Modal";
-import  Spinner, { StyledLogo } from '../Modal/Spinner';
+import  Spinner from '../Modal/Spinner';
 import NewOrderButton from "./NewOrderButton";
 import { NavBar, SpanStar, NavName } from "./Styles";
 

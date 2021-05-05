@@ -1,15 +1,4 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
-
-export const Rotate = keyframes`
-from {
-  transform: rotate(0deg);
-}
-
-to {
-  transform: rotate(360deg);
-}
-`;
 
 const Spinner = () => {
   return (
@@ -31,9 +20,5 @@ const Spinner = () => {
     </svg>
   );
 };
-
-export const StyledLogo = styled(Spinner)`
-  animation: ${Rotate} infinite 20s linear;
-`;
 
 export default Spinner;
