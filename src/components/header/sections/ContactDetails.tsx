@@ -34,7 +34,10 @@ export const ContactDetails = (props: props): JSX.Element => {
         <ContactType>
           <i className="fal fa-home"></i>
         </ContactType>
-        <ContactValue>{props.workPhone}</ContactValue>
+        {/* <ContactValue>{props.workPhone}</ContactValue> */}
+        <ContactValue>
+          248-555-300-888888888888888888888888888888888888
+        </ContactValue>
       </div>
       <div>
         <ContactType>
