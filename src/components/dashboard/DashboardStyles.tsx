@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface prop {
-    status: Boolean;
+  status: Boolean;
 }
 
 export const Section = styled.section`
@@ -35,7 +35,7 @@ export const StatusMessage = styled.div`
   align-items: center;
 `;
 
- export const ActiveButton = styled.button<prop>`
+export const ActiveButton = styled.button<prop>`
     width: ${(props) => (props.status ? "67px;" : "83px;")}
     height: 23px;
     border-radius: 11px;
@@ -44,8 +44,16 @@ export const StatusMessage = styled.div`
     border: none;
     cursor: pointer;
     opacity: 1;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: red;
+    }
   `;
- export const DisabledButton = styled.button<prop>`
+export const DisabledButton = styled.button<prop>`
     width: ${(props) => (!props.status ? "67px;" : "83px;")}
     height: 23px;
     border-radius: 11px;
@@ -54,8 +62,11 @@ export const StatusMessage = styled.div`
     border: none;
     cursor: pointer;
     opacity: 1;
+    &:focus {
+      outline: none;
+    }
   `;
- export const ActiveText = styled.a<prop>`
+export const ActiveText = styled.a<prop>`
     display: inline-block;
     width: 27px;
     height: 11px;
@@ -66,7 +77,7 @@ export const StatusMessage = styled.div`
     text-decoration: none;
     opacity: 1;
   `;
- export const DisabledText = styled.a<prop>`
+export const DisabledText = styled.a<prop>`
     width: 43px;
     height: 11px;
     text-align: left;
