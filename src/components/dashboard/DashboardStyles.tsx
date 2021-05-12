@@ -48,10 +48,6 @@ export const ActiveButton = styled.button<prop>`
     &:focus {
       outline: none;
     }
-
-    &:hover {
-      background-color: red;
-    }
   `;
 export const DisabledButton = styled.button<prop>`
     width: ${(props) => (!props.status ? "67px;" : "83px;")}
