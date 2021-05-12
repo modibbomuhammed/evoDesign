@@ -1,5 +1,10 @@
 import React from "react";
-import { Contact, ContactType, ContactValue } from "./styles/ContactStyles";
+import {
+  Contact,
+  ContactType,
+  ContactValue,
+  ContactWrapper,
+} from "./styles/ContactStyles";
 
 interface props {
   id: number;
@@ -12,39 +17,40 @@ interface props {
 export const ContactDetails = (props: props): JSX.Element => {
   return (
     <Contact>
-      <div>
+      <ContactWrapper>
         <ContactType>
           <i className="fal fa-user user-pic"></i>
         </ContactType>
         {props.id && <ContactValue>#{props.id}</ContactValue>}
-      </div>
-      <div>
+      </ContactWrapper>
+
+      <ContactWrapper>
         <ContactType>
           <i className="fal fa-address-book"></i>
         </ContactType>
         <ContactValue>{props.homePhone}</ContactValue>
-      </div>
-      <div>
+      </ContactWrapper>
+
+      <ContactWrapper>
         <ContactType>
           <i className="fal fa-fax"></i>
         </ContactType>
         <ContactValue>{props.mobilePhone}</ContactValue>
-      </div>
-      <div>
+      </ContactWrapper>
+
+      <ContactWrapper>
         <ContactType>
           <i className="fal fa-home"></i>
         </ContactType>
-        {/* <ContactValue>{props.workPhone}</ContactValue> */}
-        <ContactValue>
-          248-555-300-888888888888888888888888888888888888
-        </ContactValue>
-      </div>
-      <div>
+        <ContactValue>{props.workPhone}</ContactValue>
+      </ContactWrapper>
+
+      <ContactWrapper>
         <ContactType>
           <i className="far fa-at"></i>
         </ContactType>
         <ContactValue>{props.email}</ContactValue>
-      </div>
+      </ContactWrapper>
     </Contact>
   );
 };

@@ -28,7 +28,7 @@ export const ContactValue = styled.span`
 `;
 
 export const ContactWrapper = styled.div`
-  width: 160px;
+  width: 181px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
