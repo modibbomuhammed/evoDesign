@@ -26,3 +26,10 @@ export const ContactValue = styled.span`
   letter-spacing: 0px;
   color: #333333;
 `;
+
+export const ContactWrapper = styled.div`
+  width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;

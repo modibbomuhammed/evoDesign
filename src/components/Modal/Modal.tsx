@@ -1,15 +1,17 @@
 import React from "react";
-import { ModalOverlay, ModalCloseButton, ModalSpinnerPosition, LoadingText} from './ModalStyles';
-
+import {
+  ModalOverlay,
+  ModalCloseButton,
+  RotatingIcon,
+  LoadingText,
+} from "./ModalStyles";
 
 interface props {
-  children: any;
   open: Boolean;
   closeModal: () => void;
 }
 
-
-export const Modal: React.FC<props> = ({ children, open, closeModal }) => {
+export const Modal: React.FC<props> = ({ open, closeModal }) => {
   if (!open) return null;
   return (
     <>
@@ -17,8 +19,8 @@ export const Modal: React.FC<props> = ({ children, open, closeModal }) => {
       <ModalCloseButton onClick={closeModal}>
         <i className="fal fa-times size"></i>
       </ModalCloseButton>
-      <ModalSpinnerPosition>{children}</ModalSpinnerPosition>
-      <LoadingText>Loading</LoadingText>
+        <RotatingIcon></RotatingIcon>
+        <LoadingText>Processing</LoadingText>
     </>
   );
 };

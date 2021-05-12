@@ -31,7 +31,6 @@ const UI = styled.div`
 const App: React.FC = (): JSX.Element => {
   return (
     <Provider store={store}>
-
       <UI>
         <Nav />
         <hr
