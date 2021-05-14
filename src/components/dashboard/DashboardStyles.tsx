@@ -35,51 +35,41 @@ export const StatusMessage = styled.div`
   align-items: center;
 `;
 
-export const ActiveButton = styled.button<prop>`
-    width: ${(props) => (props.status ? "67px;" : "83px;")}
-    height: 23px;
-    border-radius: 11px;
-    background: ${(props) =>
-      props.status ? "#ffffff" : "#7d869a"} 0% 0% no-repeat padding-box;
-    border: none;
-    cursor: pointer;
-    opacity: 1;
+const Button = styled.button`
+  height: 23px;
+  border-radius: 11px;
+  border: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+`;
 
-    &:focus {
-      outline: none;
-    }
-  `;
-export const DisabledButton = styled.button<prop>`
+export const ActiveButton = styled(Button)<prop>`
+  width: ${(props) => (props.status ? "67px;" : "83px;")}
+  background: ${(props) =>
+    props.status ? "#ffffff" : "#7d869a"} 0% 0% no-repeat padding-box;
+`;
+
+export const DisabledButton = styled(Button)<prop>`
     width: ${(props) => (!props.status ? "67px;" : "83px;")}
-    height: 23px;
-    border-radius: 11px;
     background: ${(props) =>
       !props.status ? "#ffffff" : "#7d869a"} 0% 0% no-repeat padding-box;
-    border: none;
-    cursor: pointer;
-    opacity: 1;
-    &:focus {
-      outline: none;
-    }
-  `;
-export const ActiveText = styled.a<prop>`
-    display: inline-block;
-    width: 27px;
-    height: 11px;
-    text-align: left;
-    font: normal normal normal 10px/11px Arial;
-    letter-spacing: 0px;
-    color: ${(props) => (props.status ? "#3a3a3a;" : "#ffffff;")}
-    text-decoration: none;
-    opacity: 1;
-  `;
-export const DisabledText = styled.a<prop>`
-    width: 43px;
-    height: 11px;
-    text-align: left;
-    font: normal normal normal 10px/11px Arial;
-    letter-spacing: 0px;
-    color: ${(props) => (!props.status ? "#3a3a3a;" : "#ffffff;")}
-    text-decoration: none;
-    opacity: 1;
-  `;
+    `;
+
+const Text = styled.a`
+  height: 11px;
+  text-align: left;
+  font: normal normal normal 10px/11px Arial;
+  text-decoration: none;
+`;
+
+export const ActiveText = styled(Text)<prop>`
+  width: 27px;
+  color: ${(props) => (props.status ? "#3a3a3a;" : "#ffffff;")};
+`;
+
+export const DisabledText = styled(Text)<prop>`
+  width: 43px;
+  color: ${(props) => (!props.status ? "#3a3a3a;" : "#ffffff;")};
+`;
