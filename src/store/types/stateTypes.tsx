@@ -24,7 +24,7 @@ export interface User {
   };
 }
 
-interface OrderDetails {
+export interface OrderDetails {
   id: number;
   order_id: number;
   sent_dt: string;
@@ -37,6 +37,7 @@ interface OrderDetails {
 }
 
 export interface Orders {
+  [key: string]: any;
   orders_A: [];
   orders_AA: [];
   orders_AAA: {
@@ -44,4 +45,18 @@ export interface Orders {
   };
   orders_B: [];
   orders_C: [];
+}
+
+export interface FormatOrders {
+  [key: string]: any;
+  date: {
+    day: string;
+    time: string;
+  };
+  order_id: number;
+  type: string;
+  subject: {
+    title?: string;
+    email?: string;
+  };
 }

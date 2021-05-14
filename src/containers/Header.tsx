@@ -1,18 +1,31 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
-import { GenderDetails, CarrierDetails, ContactDetails, CommunicationDetails} from '../components/header/sections';
+import {
+  GenderDetails,
+  CarrierDetails,
+  ContactDetails,
+  CommunicationDetails,
+} from "../components/header/sections";
 import { User } from "../store/types/stateTypes";
 import { fetchUserInfo } from "../store/actions";
 
-import { Gender, Communication, Carrier } from "../components/header/sections/styles/HeaderStyles";
+import {
+  Gender,
+  Communication,
+  Carrier,
+} from "../components/header/sections/styles/HeaderStyles";
+import { RootState } from "../store";
 
-const Header = (props: { load: () => void; userInfo: User }): JSX.Element => {
-  const { userInfo } = props;
+const Header = (props: {
+  fetchUserInfo: () => void;
+  userInfo: User;
+}): JSX.Element => {
+  const { userInfo, fetchUserInfo } = props;
 
   useEffect(() => {
-    if (!Object.keys(userInfo).length) props.load();
-  }, [userInfo]);
+    if (!Object.keys(userInfo).length) fetchUserInfo();
+  }, [userInfo, fetchUserInfo]);
 
   return (
     <header style={{ display: "flex" }}>
@@ -42,11 +55,8 @@ const Header = (props: { load: () => void; userInfo: User }): JSX.Element => {
   );
 };
 
-const mapDispatchToProps = (dispatch: any) => ({
-  load: () => dispatch(fetchUserInfo()),
-});
-
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: RootState) => ({
   userInfo: state.userReducer,
 });
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+
+export default connect(mapStateToProps, { fetchUserInfo })(Header);

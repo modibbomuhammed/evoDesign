@@ -1,7 +1,8 @@
 import moment from "moment";
+import { OrderDetails } from "../store/types/stateTypes";
 
-export default function formatArr(arr: any) {
-  return arr.map((val: any) => {
+export default function formatArr(arr: []) {
+  return arr.map((val: OrderDetails) => {
     return {
       date: {
         day: moment(val.sent_dt).format("ddd, MMM DD"),

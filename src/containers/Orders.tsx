@@ -3,26 +3,29 @@ import { connect } from "react-redux";
 import { OrderTabs } from "../components/orders/OrderTabs";
 import { Section } from "../components/orders/OrderStyles";
 import { setCurrentTab, setButton } from "../store/actions";
+import { RootState } from "../store";
+import { Orders } from "../store/types/stateTypes";
 
-const Orders = (props: {
-  orders: any;
+const Order = (props: {
+  orders: Orders;
   setCurrentTab: (t: string) => void;
   setButton: (b: string) => void;
 }) => {
   const [activeTab, setActiveTab] = useState("");
+  const { setButton, setCurrentTab, orders } = props;
   const handleChange = (name: string) => {
     setActiveTab(name);
-    props.setCurrentTab(name);
-    props.setButton("sent");
+    setCurrentTab(name);
+    setButton("sent");
   };
 
   useEffect(() => {
     if (!activeTab) {
-      const [, , tab] = Object.keys(props.orders || {});
+      const [, , tab] = Object.keys(orders || {});
       setActiveTab(tab);
-      if (tab) props.setCurrentTab(tab);
+      if (tab) setCurrentTab(tab);
     }
-  }, [props.orders]);
+  }, [orders, setCurrentTab, activeTab]);
 
   return (
     <Section>
@@ -35,8 +38,8 @@ const Orders = (props: {
   );
 };
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: RootState) {
   return { orders: state.ordersReducer?.order };
 }
 
-export default connect(mapStateToProps, { setCurrentTab, setButton })(Orders);
+export default connect(mapStateToProps, { setCurrentTab, setButton })(Order);

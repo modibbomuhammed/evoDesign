@@ -9,8 +9,9 @@ export const OrderTabs = (props: {
 }) => {
   const { tabs, active } = props;
 
-  const handleTabClick = (e: any) => {
-    props.handleChange(e.target?.id);
+  const handleTabClick = (e: React.MouseEvent<HTMLLIElement>) => {
+    const target = e.target as Element;
+    props.handleChange(target.id);
   };
 
   return (

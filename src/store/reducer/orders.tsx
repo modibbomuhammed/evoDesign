@@ -7,16 +7,16 @@ interface IAppState {
   button: string;
 }
 
-interface ACTIONTYPE {
+export interface ORDERACTIONTYPE {
   type: string;
   payload: Orders | any;
 }
 
 const initialState: IAppState | any = {};
 
-const orderReducer: Reducer<IAppState, ACTIONTYPE> = (
+const orderReducer: Reducer<IAppState, ORDERACTIONTYPE> = (
   state = initialState,
-  action: ACTIONTYPE
+  action: ORDERACTIONTYPE
 ): IAppState => {
   switch (action.type) {
     case FETCH_ORDER_INFO_SUCCESS:

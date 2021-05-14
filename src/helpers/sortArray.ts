@@ -1,25 +1,27 @@
-export default function sortArr(arr: any[], e?: any): any {
+import { FormatOrders } from "../store/types/stateTypes";
+
+export default function sortArr(arr: FormatOrders[], id: string) {
   const copy = [...arr];
-  copy.sort((a: any, b: any): any => {
+  copy.sort((a: FormatOrders, b: FormatOrders) => {
     let textA: any;
     let textB: any;
-    if (e.target.id === "date") {
-      textA = new Date(`${a[e.target.id].day} ${a[e.target.id].time}`);
-      textB = new Date(`${b[e.target.id].day} ${b[e.target.id].time}`);
+    if (id === "date") {
+      textA = new Date(`${a[id].day} ${a[id].time}`);
+      textB = new Date(`${b[id].day} ${b[id].time}`);
       return textB - textA;
     }
-    if (e.target.id === "subject") {
+    if (id === "subject") {
       textA = a.subject.title;
       textB = b.subject.title;
       return textB.toLowerCase().localeCompare(textA.toLowerCase());
     }
-    if (e.target.id === "order_id") {
-      textA = a[e.target.id];
-      textB = b[e.target.id];
+    if (id === "order_id") {
+      textA = a[id];
+      textB = b[id];
       return textB === textA ? 0 : textB > textA ? 1 : -1;
     }
-    textA = a[e.target.id];
-    textB = b[e.target.id];
+    textA = a[id];
+    textB = b[id];
     return textB.toLowerCase().localeCompare(textA.toLowerCase());
   });
   return copy;

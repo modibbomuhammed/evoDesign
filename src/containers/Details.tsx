@@ -16,20 +16,23 @@ import {
 import sortArr from "../helpers/sortArray";
 import { TableHead } from "../components/details/TableHead";
 import formatArr from "../helpers/formatArray";
+import { RootState } from "../store";
+import { Orders } from "../store/types/stateTypes";
+import { FormatOrders } from "../store/types/stateTypes";
 
 const Details = (props: {
   loading: Boolean;
-  orders: any;
+  orders: Orders;
   currentTab: string;
   currentButton: string;
 }) => {
-  const [formatValues, setFormatValues] = useState<any>([]);
+  const [formatValues, setFormatValues] = useState<[] | FormatOrders[]>([]);
   const [asc, setAsc] = useState(true);
 
   const { orders, currentTab, currentButton } = props;
   useEffect(() => {
     if (orders) {
-      let format: any;
+      let format;
       const orderTab = orders[currentTab];
       if (currentButton in orderTab) {
         format = formatArr(orderTab[currentButton]);
@@ -40,9 +43,10 @@ const Details = (props: {
     }
   }, [orders, currentButton, currentTab]);
 
-  const handleTabClick = (e: any): void => {
+  const handleTabClick = (e: React.MouseEvent<HTMLTableRowElement>): void => {
+    const target = e.target as Element;
     if (props.loading) return;
-    const copy: any[] = sortArr(formatValues, e);
+    const copy: FormatOrders[] = sortArr(formatValues, target.id);
     setFormatValues(asc ? copy : copy.reverse());
     setAsc(!asc);
   };
@@ -68,7 +72,7 @@ const Details = (props: {
               </td>
             </tr>
           ) : (
-            formatValues.map((val: any, index: number) => {
+            formatValues.map((val: FormatOrders, index: number) => {
               const keys = Object.keys(val);
               return (
                 <TableRowWrapper
@@ -120,7 +124,7 @@ const Details = (props: {
   );
 };
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: RootState) {
   return {
     loading: state.statusReducer.loading,
     currentTab: state.statusReducer.currentTab,

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchOrderInfo, setButton } from "../store/actions/index";
 import { connect } from "react-redux";
+import { ORDERACTIONTYPE } from "../store/reducer/orders";
 
 import {
   ActiveButton,
@@ -8,10 +9,11 @@ import {
   DisabledButton,
   DisabledText,
 } from "../components/dashboard/DashboardStyles";
+import { RootState } from "../store";
 
 interface props {
   fetchOrderInfo: () => void;
-  setButton: (button: string) => any;
+  setButton: (button: string) => ORDERACTIONTYPE;
   changeTab: string;
 }
 const Buttons: React.FC<props> = ({
@@ -24,7 +26,7 @@ const Buttons: React.FC<props> = ({
   useEffect(() => {
     fetchOrderInfo();
     setButton("sent");
-  }, []);
+  }, [fetchOrderInfo, setButton]);
 
   useEffect(() => {
     setActive(true);
@@ -49,7 +51,7 @@ const Buttons: React.FC<props> = ({
   );
 };
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: RootState) {
   return {
     changeTab: state.statusReducer.currentTab,
   };

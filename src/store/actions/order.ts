@@ -1,3 +1,6 @@
+import { AxiosError } from 'axios';
+import { ORDERACTIONTYPE } from '../reducer/orders';
+import { Orders } from '../types/stateTypes';
 // action types
 export const FETCH_ORDER_INFO = "FETCH_ORDER_INFO";
 export const FETCH_ORDER_INFO_INVOKED = "FETCH_ORDER_INFO_INVOKED";
@@ -8,13 +11,13 @@ export const SET_BUTTON = "SET_BUTTON";
 //action creators
 export const fetchOrderInfo = () => ({ type: FETCH_ORDER_INFO });
 export const fetchOrderInfoInvoked = () => ({ type: FETCH_ORDER_INFO_INVOKED });
-export const fetchOrderInfoSuccess = (payload: any) => ({
+export const fetchOrderInfoSuccess = (payload: Orders) => ({
   type: FETCH_ORDER_INFO_SUCCESS,
   payload,
 });
-export const fetchOrderInfoFailed = (payload: any) => ({
+export const fetchOrderInfoFailed = (payload: AxiosError) : ORDERACTIONTYPE => ({
   type: FETCH_ORDER_INFO_FAILED,
   payload,
 });
 
-export const setButton = (payload: string) => ({ type: SET_BUTTON, payload });
+export const setButton = (payload: string): ORDERACTIONTYPE  => ({ type: SET_BUTTON, payload });

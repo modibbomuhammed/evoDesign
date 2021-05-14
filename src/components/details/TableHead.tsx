@@ -2,7 +2,7 @@ import React from "react";
 import { TableHeader, TableHeaderRow } from "./DetailsStyles";
 
 interface props {
-  handleClick: (e: any) => any;
+  handleClick: (e: React.MouseEvent<HTMLTableRowElement>) => void;
 }
 export const TableHead: React.FC<props> = ({ handleClick }) => {
   return (
@@ -12,28 +12,28 @@ export const TableHead: React.FC<props> = ({ handleClick }) => {
         id="date"
         onClick={handleClick}
       >
-        DATE & TIME
+        <td>DATE & TIME</td>
       </TableHeaderRow>
       <TableHeaderRow
         style={{ flexBasis: "40%" }}
         id="subject"
         onClick={handleClick}
       >
-        SUBJECT
+        <td>SUBJECT</td>
       </TableHeaderRow>
       <TableHeaderRow
         style={{ flexBasis: "21%" }}
         id="type"
         onClick={handleClick}
       >
-        COMMUNICATION TYPE
+        <td>COMMUNICATION TYPE</td>
       </TableHeaderRow>
       <TableHeaderRow
         style={{ flexBasis: "15%" }}
         id="order_id"
         onClick={handleClick}
       >
-        ORDERS#
+        <td>ORDERS#</td>
       </TableHeaderRow>
     </TableHeader>
   );

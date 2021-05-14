@@ -6,13 +6,14 @@ import {
   FETCH_USER_INFO,
 } from "../actions/";
 import { getUser } from "../../services/api";
+import { User } from "../types/stateTypes";
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
-function* fetchUserInfo(): any {
+function* fetchUserInfo() {
   try {
     yield put(fetchUserInfoInvoked());
-    const payload: any = yield call(getUser);
+    const payload: User = yield call(getUser);
     yield delay(1000);
     yield put(fetchUserInfoSuccess(payload));
   } catch (e) {
