@@ -1,21 +1,13 @@
 import styled from "styled-components";
 
-interface ID {
-  id: string;
-}
-
 interface Index {
   index: number;
 }
 
 export const Section = styled.section`
-  position: absolute;
-  top: 337px;
-  left: 15px;
-  width: 1135px;
-  height: 25px;
-  opacity: 1;
+  height: 100%;
 `;
+
 export const TableWrapper = styled.table`
   text-align: left;
   width: 100%;
@@ -23,11 +15,12 @@ export const TableWrapper = styled.table`
 `;
 
 export const TableHeader = styled.thead`
-  display: "flex";
-  width: "1135px";
   display: flex;
+  border-bottom: 1px solid #d8d8d8;
+  padding: 5px 0;
 `;
-export const TableHeaderRow = styled.tr<ID>`
+
+export const TableHeaderRow = styled.tr`
   font-weight: normal;
   font-size: 10px;
   line-height: 11px;
@@ -35,12 +28,13 @@ export const TableHeaderRow = styled.tr<ID>`
 `;
 
 export const TableBody = styled.tbody`
-  width: 1135px;
-  opacity: 1;
   display: flex;
   flex-direction: column;
   tr:nth-of-type(2n) {
     background-color: #f2f4f7;
+  }
+  .underline:last-child {
+    border: none;
   }
 `;
 
@@ -63,11 +57,10 @@ export const TableDataWrapper = styled.td<Index>`
 `;
 
 export const LoadingBox = styled.div`
-  width: 1135px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 100px auto;
+  text-align: center;
 
   & div {
     width: 17px;
@@ -90,10 +83,10 @@ export const LoadingBox = styled.div`
 `;
 
 export const TableRowWrapper = styled.tr<Index>`
-  width: 1135px;
   height: 70px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #95989a;
 
   & > .date {
     flex-basis: 10%;
@@ -136,8 +129,6 @@ export const Button = styled.button`
   opacity: 1;
 `;
 export const ButtonText = styled.a`
-  top: 391px;
-  left: 1066px;
   width: 50px;
   height: 14px;
   text-align: left;
@@ -149,7 +140,6 @@ export const ButtonText = styled.a`
 `;
 
 export const NoItemsBox = styled.div`
-  width: 1135px;
   height: 200px;
   background: #fafafa 0% 0% no-repeat padding-box;
   opacity: 1;

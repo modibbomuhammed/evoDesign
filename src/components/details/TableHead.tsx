@@ -7,33 +7,17 @@ interface props {
 export const TableHead: React.FC<props> = ({ handleClick }) => {
   return (
     <TableHeader>
-      <TableHeaderRow
-        style={{ flexBasis: "10%" }}
-        id="date"
-        onClick={handleClick}
-      >
-        <td>DATE & TIME</td>
+      <TableHeaderRow style={{ flexBasis: "10%" }} onClick={handleClick}>
+        <td id="date">DATE & TIME</td>
       </TableHeaderRow>
-      <TableHeaderRow
-        style={{ flexBasis: "40%" }}
-        id="subject"
-        onClick={handleClick}
-      >
-        <td>SUBJECT</td>
+      <TableHeaderRow style={{ flexBasis: "40%" }} onClick={handleClick}>
+        <td id="subject">SUBJECT</td>
       </TableHeaderRow>
-      <TableHeaderRow
-        style={{ flexBasis: "21%" }}
-        id="type"
-        onClick={handleClick}
-      >
-        <td>COMMUNICATION TYPE</td>
+      <TableHeaderRow style={{ flexBasis: "21%" }} onClick={handleClick}>
+        <td id="type">COMMUNICATION TYPE</td>
       </TableHeaderRow>
-      <TableHeaderRow
-        style={{ flexBasis: "15%" }}
-        id="order_id"
-        onClick={handleClick}
-      >
-        <td>ORDERS#</td>
+      <TableHeaderRow style={{ flexBasis: "15%" }} onClick={handleClick}>
+        <td id="order_id">ORDER#</td>
       </TableHeaderRow>
     </TableHeader>
   );

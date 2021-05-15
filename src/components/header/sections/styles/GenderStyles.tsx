@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 export const Itag = styled.i`
-  position: absolute;
-  top: 21px;
-  left: 17px;
   width: 63px;
   height: 72px;
   text-align: left;
@@ -15,14 +12,11 @@ export const Itag = styled.i`
 `;
 
 export const Text = styled.span`
-  position: absolute;
   white-space: nowrap;
-  top: 105px;
-  left: 24.88px;
   width: 47px;
   height: 11px;
   text-align: left;
   font: normal normal normal 10px/11px Arial;
-  letter-spacing: 0px;
+  margin-top: 27px;
   color: #333333;
 `;

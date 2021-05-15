@@ -28,7 +28,15 @@ const Header = (props: {
   }, [userInfo, fetchUserInfo]);
 
   return (
-    <header style={{ display: "flex" }}>
+    <header
+      style={{
+        display: "flex",
+        width: "100%",
+        height: "125px",
+        boxSizing: "border-box",
+        marginBottom: "8px",
+      }}
+    >
       <Gender>
         <GenderDetails
           gender={userInfo.gender}

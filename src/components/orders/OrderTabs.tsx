@@ -16,14 +16,14 @@ export const OrderTabs = (props: {
 
   return (
     <TabsWrapper>
-      {tabs.map((name, index) => (
+      {tabs.map((name = "", index) => (
         <Tab
           key={index}
           active={name === active}
           id={name}
           onClick={handleTabClick}
         >
-          {name.toUpperCase()}
+          {name.toUpperCase().replaceAll("_", " ")}
         </Tab>
       ))}
     </TabsWrapper>

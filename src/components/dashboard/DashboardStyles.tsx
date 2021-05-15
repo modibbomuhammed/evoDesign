@@ -5,34 +5,26 @@ interface prop {
 }
 
 export const Section = styled.section`
-  position: absolute;
-  top: 295px;
-  left: 15px;
-  width: 1135px;
   height: 41px;
   background: #7d869a 0% 0% no-repeat padding-box;
+  display: flex;
+  padding-left: 10px;
 `;
+
 export const Container = styled.div`
-  position: absolute;
-  top: 9px;
-  left: 10px;
-  width: 170px;
-  height: 23px;
+  align-items: center;
   display: flex;
   justify-content: space-around;
 `;
 
 export const StatusMessage = styled.div`
-  white-space: nowrap;
-  width: 126px;
   height: 100%;
   font: normal normal 600 16px/22px "Open Sans";
-  text-align: center;
   color: #ffffff;
-  margin: 0 auto;
   display: flex;
-  letter-spacing: 0px;
   align-items: center;
+  justify-content: center;
+  flex-basis: 78%;
 `;
 
 const Button = styled.button`

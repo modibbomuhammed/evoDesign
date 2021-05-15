@@ -6,7 +6,6 @@ import { Activity } from "../CommunicationDetails";
 
 const Details = styled.div`
   display: flex;
-  width: 559px;
   height: 95px;
   justify-content: space-between;
   background-color: #edf5ff;

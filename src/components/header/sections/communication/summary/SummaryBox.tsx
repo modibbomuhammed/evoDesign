@@ -14,7 +14,7 @@ interface props {
 
 export const SummaryBox = (props: props) => {
   return (
-    <Box>
+    <Box className="summary-box-wrapper">
       <BoxVal>
         <SpanValue>{props.value}</SpanValue>
       </BoxVal>

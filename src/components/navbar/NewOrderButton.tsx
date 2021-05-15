@@ -1,16 +1,13 @@
-import React from "react";
-import { NewOrderWrapper, NewOrder } from "./Styles";
+// import React from "react";
+// // import { NewOrderWrapper, NewOrder } from "./Styles";
 
-interface props {
-  openModal: () => void;
-}
+// interface props {
+//   openModal: () => void;
+// }
 
-const NewOrderButton: React.FC<props> = ({ openModal }): JSX.Element => {
-  return (
-    <NewOrderWrapper>
-      <NewOrder onClick={() => openModal()}>New Order</NewOrder>
-    </NewOrderWrapper>
-  );
-};
+// const NewOrderButton: React.FC<props> = ({ openModal }): JSX.Element => {
+//   return
+// };
 
-export default NewOrderButton;
+// export default NewOrderButton;
+import react from "react";

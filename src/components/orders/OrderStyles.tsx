@@ -5,13 +5,9 @@ interface prop {
 }
 
 export const Section = styled.section`
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  top: 212px;
-  left: 15px;
-  width: 1135px;
   height: 81px;
   background: #f2f2f2 0% 0% no-repeat padding-box;
 `;
@@ -29,7 +25,7 @@ export const Tab = styled.li<prop>`
 list-style-type: none;
 height: 40px;
 background: ${(props) => (props.active ? "#3A3A3A;" : "#d2d2d2;")}
-padding: 0 20px;
+padding: 0 70px;
 margin-left: 2px;
 cursor: pointer;
 

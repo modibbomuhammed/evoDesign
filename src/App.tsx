@@ -20,12 +20,10 @@ const store = createStore(rootReducer, applyMiddleware(sagaMiddleWare));
 sagaMiddleWare.run(rootSaga);
 
 const UI = styled.div`
-  position: relative;
-  top: 0px;
-  left: 0px;
-  width: 1165px;
-  height: 1400px;
+  width: 100%;
+  height: 100%;
   background: #ffffff 0% 0% no-repeat padding-box;
+  padding: 20px;
 `;
 
 const App: React.FC = (): JSX.Element => {
@@ -33,14 +31,6 @@ const App: React.FC = (): JSX.Element => {
     <Provider store={store}>
       <UI>
         <Nav />
-        <hr
-          style={{
-            position: "relative",
-            border: "1px solid #cecece",
-            top: "65px",
-            width: "97%",
-          }}
-        />
         <Header />
         <Orders />
         <Dashboard />
