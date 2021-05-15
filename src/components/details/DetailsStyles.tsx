@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-interface Index {
-  index: number;
-}
-
 export const Section = styled.section`
   height: 100%;
 `;
@@ -40,7 +36,7 @@ export const TableBody = styled.tbody`
   }
 `;
 
-export const TableDataWrapper = styled.td<Index>`
+export const TableDataWrapper = styled.td`
   & p {
     margin: 6px 0;
     height: 22px;
@@ -84,7 +80,7 @@ export const LoadingBox = styled.div`
   }
 `;
 
-export const TableRowWrapper = styled.tr<Index>`
+export const TableRowWrapper = styled.tr`
   height: 70px;
   display: flex;
   align-items: center;

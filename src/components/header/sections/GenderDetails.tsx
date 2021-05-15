@@ -5,18 +5,17 @@ import { Itag, Text } from "./styles/GenderStyles";
 
 interface Props {
   gender: string;
-  birthdate: string;
+  birthday: string;
 }
 
-export const GenderDetails: React.FC<Props> = ({ gender, birthdate}) => {
-  const age =
-    (birthdate && moment().diff(birthdate, "years")) || "";
+export const GenderDetails: React.FC<Props> = ({ gender, birthday }) => {
+  const age = (birthday && moment().diff(birthday, "years")) || "";
   const genderDisplay = gender || "";
 
   return (
     <>
       <Itag className="fal fa-user"></Itag>
-      {birthdate && <Text>{`${genderDisplay.toUpperCase()} - ${age}`}</Text>}
+      {birthday && <Text>{`${genderDisplay.toUpperCase()} - ${age}`}</Text>}
     </>
   );
 };

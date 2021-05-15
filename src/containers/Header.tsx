@@ -40,7 +40,7 @@ const Header = (props: {
       <Gender>
         <GenderDetails
           gender={userInfo.gender}
-          birthdate={userInfo.birth_date}
+          birthday={userInfo.birth_date}
         />
       </Gender>
 

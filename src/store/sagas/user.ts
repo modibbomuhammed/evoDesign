@@ -14,7 +14,7 @@ function* fetchUserInfo() {
   try {
     yield put(fetchUserInfoInvoked());
     const payload: User = yield call(getUser);
-    yield delay(1000);
+    yield delay(2000);
     yield put(fetchUserInfoSuccess(payload));
   } catch (e) {
     yield put(fetchUserInfoFailed(e));

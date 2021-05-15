@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Modal } from "../Modal/Modal";
-// import NewOrderButton from "./NewOrderButton";
 import { NavBar, SpanStar, NavName, NewOrderButton, NewOrderWrapper } from "./Styles";
 
 export const Nav: React.FC = (): JSX.Element => {
@@ -13,7 +12,6 @@ export const Nav: React.FC = (): JSX.Element => {
         </SpanStar>
         <NavName>Joseph Smith</NavName>
       </div>
-      {/* <NewOrderButton openModal={() => setIsOpen(true)} /> */}
       <NewOrderWrapper>
         <NewOrderButton onClick={() => setIsOpen(true)}>
           New Order

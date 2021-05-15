@@ -1,5 +1,5 @@
 import { AxiosError } from 'axios';
-import { ORDERACTIONTYPE } from '../reducer/orders';
+import { ORDER_ACTION_TYPE } from '../reducer/orders';
 import { Orders } from '../types/stateTypes';
 // action types
 export const FETCH_ORDER_INFO = "FETCH_ORDER_INFO";
@@ -15,9 +15,9 @@ export const fetchOrderInfoSuccess = (payload: Orders) => ({
   type: FETCH_ORDER_INFO_SUCCESS,
   payload,
 });
-export const fetchOrderInfoFailed = (payload: AxiosError) : ORDERACTIONTYPE => ({
+export const fetchOrderInfoFailed = (payload: AxiosError) : ORDER_ACTION_TYPE => ({
   type: FETCH_ORDER_INFO_FAILED,
   payload,
 });
 
-export const setButton = (payload: string): ORDERACTIONTYPE  => ({ type: SET_BUTTON, payload });
+export const setButton = (payload: string): ORDER_ACTION_TYPE  => ({ type: SET_BUTTON, payload });

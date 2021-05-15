@@ -13,23 +13,19 @@ export const TableBodyItems: React.FC<props> = ({ values }) => {
       {values.map((val: FormatOrders, index: number) => {
         const keys = Object.keys(val);
         return (
-          <TableRowWrapper key={index} index={index} className="underline">
+          <TableRowWrapper key={index} className="underline">
             {keys.map((key) => {
               if (typeof val[key] === "object") {
                 if (key === "Date & Time") {
                   return (
-                    <TableDataWrapper key={key} index={index} className="date">
+                    <TableDataWrapper key={key} className="date">
                       <p>{val[key].day}</p>
                       <p>{val[key].time}</p>
                     </TableDataWrapper>
                   );
                 } else {
                   return (
-                    <TableDataWrapper
-                      key={key}
-                      index={index}
-                      className="subject"
-                    >
+                    <TableDataWrapper key={key} className="subject">
                       <p className="ellipsis">{val[key].title}</p>
                       <p className="ellipsis">{val[key].email}</p>
                     </TableDataWrapper>
@@ -37,7 +33,7 @@ export const TableBodyItems: React.FC<props> = ({ values }) => {
                 }
               }
               return (
-                <TableDataWrapper key={key} index={index} className="type">
+                <TableDataWrapper key={key} className="type">
                   {val[key]}
                 </TableDataWrapper>
               );

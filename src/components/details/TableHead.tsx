@@ -2,7 +2,7 @@ import React from "react";
 import { TableHeader, TableHeaderRow } from "./DetailsStyles";
 
 interface props {
-  handleClick: (e: any) => void;
+  handleClick: (e: React.MouseEvent<HTMLTableHeaderCellElement>) => void;
   tableHeaders: string[];
 }
 interface config {

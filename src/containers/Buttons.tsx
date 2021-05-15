@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchOrderInfo, setButton } from "../store/actions/index";
 import { connect } from "react-redux";
-import { ORDERACTIONTYPE } from "../store/reducer/orders";
+import { ORDER_ACTION_TYPE } from "../store/reducer/orders";
 
 import {
   ActiveButton,
@@ -13,7 +13,7 @@ import { RootState } from "../store";
 
 interface props {
   fetchOrderInfo: () => void;
-  setButton: (button: string) => ORDERACTIONTYPE;
+  setButton: (button: string) => ORDER_ACTION_TYPE;
   changeTab: string;
 }
 const Buttons: React.FC<props> = ({

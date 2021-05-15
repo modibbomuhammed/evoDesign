@@ -1,8 +1,3 @@
-// enum Gender {
-//   MALE = "male",
-//   FEMALE = "female",
-// }
-
 export interface User {
   id: number;
   first_name: string;

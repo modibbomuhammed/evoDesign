@@ -49,7 +49,9 @@ const Details = (props: {
     }
   }, [orders, currentButton, currentTab]);
 
-  const handleTabClick = (e: React.MouseEvent<HTMLTableRowElement>): void => {
+  const handleTabClick = (
+    e: React.MouseEvent<HTMLTableHeaderCellElement>
+  ): void => {
     const { id: key } = e.target as Element;
     if (props.loading) return;
     const copy: FormatOrders[] = sortArr(formatValues, key);

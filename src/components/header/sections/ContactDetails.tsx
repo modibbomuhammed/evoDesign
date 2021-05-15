@@ -7,6 +7,7 @@ import {
 } from "./styles/ContactStyles";
 
 interface props {
+  [key: string]: string | number;
   id: number;
   homePhone: string;
   mobilePhone: string;
@@ -14,43 +15,35 @@ interface props {
   email: string;
 }
 
+interface config {
+  [key: string]: string;
+}
+
+const classNameConfig: config = {
+  id: "fal fa-user user-pic",
+  homePhone: "far fa-mobile",
+  workPhone: "fal fa-home",
+  mobilePhone: "fal fa-fax",
+  email: "far fa-at",
+};
+
 export const ContactDetails = (props: props): JSX.Element => {
+  const keys = Object.keys(props);
   return (
     <Contact>
-      <ContactWrapper>
-        <ContactType>
-          <i className="fal fa-user user-pic"></i>
-        </ContactType>
-        {props.id && <ContactValue>#{props.id}</ContactValue>}
-      </ContactWrapper>
+      {keys.map((val, index) => {
+        return (
+          <ContactWrapper key={index}>
+            <ContactType>
+              <i className={classNameConfig[val]}></i>
+            </ContactType>
+            <ContactValue>
+              {`${val === "id" ? "#" : ""}` + props[val]}
+            </ContactValue>
+          </ContactWrapper>
+        );
+      })}
 
-      <ContactWrapper>
-        <ContactType>
-          <i className="far fa-mobile"></i>
-        </ContactType>
-        <ContactValue>{props.homePhone}</ContactValue>
-      </ContactWrapper>
-
-      <ContactWrapper>
-        <ContactType>
-          <i className="fal fa-fax"></i>
-        </ContactType>
-        <ContactValue>{props.mobilePhone}</ContactValue>
-      </ContactWrapper>
-
-      <ContactWrapper>
-        <ContactType>
-          <i className="fal fa-home"></i>
-        </ContactType>
-        <ContactValue>{props.workPhone}</ContactValue>
-      </ContactWrapper>
-
-      <ContactWrapper>
-        <ContactType>
-          <i className="far fa-at"></i>
-        </ContactType>
-        <ContactValue>{props.email}</ContactValue>
-      </ContactWrapper>
     </Contact>
   );
 };
