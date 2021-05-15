@@ -2,22 +2,33 @@ import React from "react";
 import { TableHeader, TableHeaderRow } from "./DetailsStyles";
 
 interface props {
-  handleClick: (e: React.MouseEvent<HTMLTableRowElement>) => void;
+  handleClick: (e: any) => void;
+  tableHeaders: string[];
 }
-export const TableHead: React.FC<props> = ({ handleClick }) => {
+interface config {
+  [key: string]: string;
+}
+const flexConfig: config = {
+  "Date & Time": "10%",
+  Subject: "40%",
+  "Communication Type": "21%",
+  "Order#": "15%",
+};
+
+export const TableHead: React.FC<props> = ({ handleClick, tableHeaders }) => {
   return (
     <TableHeader>
-      <TableHeaderRow style={{ flexBasis: "10%" }} onClick={handleClick}>
-        <td id="date">DATE & TIME</td>
-      </TableHeaderRow>
-      <TableHeaderRow style={{ flexBasis: "40%" }} onClick={handleClick}>
-        <td id="subject">SUBJECT</td>
-      </TableHeaderRow>
-      <TableHeaderRow style={{ flexBasis: "21%" }} onClick={handleClick}>
-        <td id="type">COMMUNICATION TYPE</td>
-      </TableHeaderRow>
-      <TableHeaderRow style={{ flexBasis: "15%" }} onClick={handleClick}>
-        <td id="order_id">ORDER#</td>
+      <TableHeaderRow>
+        {tableHeaders.map((key) => (
+          <th
+            key={key}
+            style={{ flexBasis: flexConfig[key], color: "#878787" }}
+            id={key}
+            onClick={handleClick}
+          >
+            {key.toUpperCase()}
+          </th>
+        ))}
       </TableHeaderRow>
     </TableHeader>
   );

@@ -24,6 +24,8 @@ const UI = styled.div`
   height: 100%;
   background: #ffffff 0% 0% no-repeat padding-box;
   padding: 20px;
+  border: 1px solid #e1e1e1;
+  border-bottom: none;
 `;
 
 const App: React.FC = (): JSX.Element => {

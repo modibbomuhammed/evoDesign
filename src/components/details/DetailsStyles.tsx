@@ -25,6 +25,8 @@ export const TableHeaderRow = styled.tr`
   font-size: 10px;
   line-height: 11px;
   white-space: nowrap;
+  display: flex;
+  width: 100%;
 `;
 
 export const TableBody = styled.tbody`

@@ -26,7 +26,7 @@ export const ContactDetails = (props: props): JSX.Element => {
 
       <ContactWrapper>
         <ContactType>
-          <i className="fal fa-address-book"></i>
+          <i className="far fa-mobile"></i>
         </ContactType>
         <ContactValue>{props.homePhone}</ContactValue>
       </ContactWrapper>

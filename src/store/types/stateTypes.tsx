@@ -49,13 +49,13 @@ export interface Orders {
 
 export interface FormatOrders {
   [key: string]: any;
-  date: {
+  "Date & Time": {
     day: string;
     time: string;
   };
-  order_id: number;
-  type: string;
-  subject: {
+  "Order#": number;
+  "Communication Type": string;
+  Subject: {
     title?: string;
     email?: string;
   };

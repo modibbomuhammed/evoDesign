@@ -4,13 +4,13 @@ import { OrderDetails } from "../store/types/stateTypes";
 export default function formatArr(arr: []) {
   return arr.map((val: OrderDetails) => {
     return {
-      date: {
+      "Date & Time": {
         day: moment(val.sent_dt).format("ddd, MMM DD"),
         time: moment(val.sent_tm, ["HH:mm:ss"]).format("h:mm A"),
       },
-      subject: val.subject,
-      type: val.type,
-      order_id: val.order_id,
+      Subject: val.subject,
+      "Communication Type": val.type,
+      "Order#": val.order_id,
     };
   });
 }

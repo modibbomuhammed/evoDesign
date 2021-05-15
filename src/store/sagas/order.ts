@@ -12,7 +12,7 @@ import { Orders } from "../types/stateTypes";
 // used to delay the saga so that the user would observe the loader
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
-function* fetchOrderInfo(){
+function* fetchOrderInfo() {
   try {
     yield put({ type: LOADING });
     yield call(delay, 2000);

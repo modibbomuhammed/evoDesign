@@ -50,11 +50,11 @@ const Details = (props: {
   }, [orders, currentButton, currentTab]);
 
   const handleTabClick = (e: React.MouseEvent<HTMLTableRowElement>): void => {
-    const { id } = e.target as Element;
+    const { id: key } = e.target as Element;
     if (props.loading) return;
-    const copy: FormatOrders[] = sortArr(formatValues, id);
-    setFormatValues(listOrder[id] ? copy.reverse() : copy);
-    setListOrder({ ...listOrder, [id]: !listOrder[id] });
+    const copy: FormatOrders[] = sortArr(formatValues, key);
+    setFormatValues(listOrder[key] ? copy.reverse() : copy);
+    setListOrder({ ...listOrder, [key]: !listOrder[key] });
   };
   return (
     <Section>
@@ -68,7 +68,10 @@ const Details = (props: {
         </NoItemsBox>
       ) : (
         <TableWrapper>
-          <TableHead handleClick={handleTabClick} />
+          <TableHead
+            tableHeaders={Object.keys(formatValues[0])}
+            handleClick={handleTabClick}
+          />
           <TableBody>
             <TableBodyItems values={formatValues} />
           </TableBody>

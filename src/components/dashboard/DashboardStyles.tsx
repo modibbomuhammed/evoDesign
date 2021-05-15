@@ -24,7 +24,7 @@ export const StatusMessage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-basis: 78%;
+  flex-basis: 73%;
 `;
 
 const Button = styled.button`

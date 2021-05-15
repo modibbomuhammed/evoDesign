@@ -10,6 +10,8 @@ export const Section = styled.section`
   align-items: flex-end;
   height: 81px;
   background: #f2f2f2 0% 0% no-repeat padding-box;
+  border-bottom: 2px solid #333333;
+  margin-bottom: 1px;
 `;
 export const TabsWrapper = styled.ul`
   width: 100%;
@@ -25,7 +27,7 @@ export const Tab = styled.li<prop>`
 list-style-type: none;
 height: 40px;
 background: ${(props) => (props.active ? "#3A3A3A;" : "#d2d2d2;")}
-padding: 0 70px;
+padding: 0 45px;
 margin-left: 2px;
 cursor: pointer;
 
