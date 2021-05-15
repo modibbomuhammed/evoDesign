@@ -19,7 +19,7 @@ This project was designed with create-react-app
 • Flexbox design and styling
 
 ### Check it out
-https://github.com/modibbomuhammed/evodesign/tree/master  
+https://github.com/modibbomuhammed/evodesign/  
   
 ### How To Run
 
